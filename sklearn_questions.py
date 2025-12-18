@@ -121,7 +121,6 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
         y : ndarray, shape (n_test_samples,)
             Predicted class labels for each test data sample.
         """
-
         check_is_fitted(
             self, attributes=["X_fitted_", "y_fitted_", "classes_"]
         )
@@ -171,7 +170,6 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
         score : float
             Accuracy of the model computed for the (X, y) pairs.
         """
-
         check_is_fitted(
             self, attributes=["X_fitted_", "y_fitted_", "classes_"]
         )
@@ -218,7 +216,6 @@ class MonthlySplit(BaseCrossValidator):
         n_splits : int
             The number of splits.
         """
-
         if self.time_col == 'index':
             if not isinstance(X.index, pd.DatetimeIndex):
                 raise ValueError("Index must be a pandas Datatime.")
@@ -258,7 +255,6 @@ class MonthlySplit(BaseCrossValidator):
         idx_test : ndarray
             The testing set indices for that split.
         """
-
         if self.time_col == 'index':
             if not isinstance(X.index, pd.DatetimeIndex):
                 raise ValueError("Index must be a pandas DatetimeIndex.")
